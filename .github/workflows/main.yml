@@ -40,7 +40,7 @@ jobs:
 
       - name: SonarQube Analysis
         timeout-minutes: 10
-        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar "-Dsonar.projectKey=ecommerce_git_action" "-Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}" "-Dsonar.login=${{ secrets.github-actions }}" "-Dsonar.working.directory=.sonarwork"
+        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar "-Dsonar.projectKey=ecommerce_git_action" "-Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}" "-Dsonar.token=${{ secrets.github-actions }}" "-Dsonar.working.directory=.sonarwork"
 
       - name: Verificar report-task generado
         shell: powershell
